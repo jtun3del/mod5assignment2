@@ -12,5 +12,6 @@ function SantaListItem(child) {
         $childDiv.append(`<button class="delete"> remove child</button>`)
         return $childDiv;
 
+
     }
 }
