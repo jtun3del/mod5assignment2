@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
+
+body {
+    background-color: red;
+/*     background-image: linear-gradient(45deg, white 25%, transparent 25.5%, transparent 50%, white 50.5%, white 75%, transparent 75.5%, transparent); */
+    background-size: 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Mountains of Christmas', serif;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+form h1{
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 300px;
+}
+
+input[type=text], select {
+    padding: 7px;
+    border-radius: 7px;
+}
+
+label:has(input[type=radio]){
+	margin: 5px;
+}
+
+label:has(input[type=radio]):last-of-type {
+    margin-bottom: 20px;
+}
+
+label::after{
+    content: "\a";
+    white-space: pre;
+}
+
+input:required+label:after{
+    color: red;
+    content: '*'
+}
+
+form>div {
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-flow: column-reverse;
+    margin-bottom: 20px;
+}
+
+form .error{
+    color: red;
+    display: block;
+}
+
+form .invalid {
+    border: 2px solid red;
+}
+
+button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 7px;
+}
+
+#santa-list {
+    position: relative;
+}
+
+button {
+	margin-top: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: #666 2px 2px 3px;
+}
+
+button:active {
+    box-shadow: #666 0 0 3px;
+}
+
+.list {
+    font-size: 1.3em;
+}
+
+.list .child {
+    display: flex;
+}
+
+.list .child .name {
+    flex-grow: 1;
+}
+
+.list .child .disposition {
+    margin-right: 20px;
+}
+
+.white-box {
+    background-color: rgba(255,255,255,.9);
+    padding: 50px;
+    border-radius: 7px;
+}
+
+.list-header {
+    width: 300px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.list-header form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.list-header h2 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0;
+    margin: 20px 0 0 0;
+
+}
+
+button.delete {
+    padding: 2px 6px;
+    font-size: .8em;
+}
+
+/* https://codepen.io/nicolasjesenberger/pen/QWYZEWZ */
+.button-hat {
+    position: absolute;
+    top: -15px;
+    left: -17px;
+    height: 44px;
+    filter: drop-shadow(0 2px 1px rgb(0 0 0 / .25));
+}
