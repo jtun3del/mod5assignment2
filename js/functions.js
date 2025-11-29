@@ -25,13 +25,13 @@ function validateName($nameField) {
     return true
 }
 
-function validateBehavior($behaviorFields) {
-    let behavior = $behaviorFields.filter(":checked").val()
-    if(!behavior) {
-        addError($behaviorFields.first(),"Must choose one");
+function validateAmount($amountField) {
+    let amount = $amountField.val()
+    if(isNaN(amount)) {
+        addError($amountField,"Must be a number");
         return false;
-    }else if(!['nice','naughty'].includes(behavior)) {
-        addError($behaviorFields.first(),"Prepare for coal");
+    } else if (amount < 1){
+        addError($amountField, "Must be a positive number")
         return false;
     }
     return true

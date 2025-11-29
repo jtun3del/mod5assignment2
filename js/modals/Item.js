@@ -1,18 +1,16 @@
 /**
  *
  * @param name
- * @param disposition naughty or nice
+ * @param amount
  * @param catagory "#Produce","#Grains","#Dairy","#Baking","#Meat","#Other"
  * @constructor
  */
-function Item(name, disposition,catagory) {
+function Item(name, amount,catagory) {
     this.name = name;
-    this.disposition = disposition;
+    this.amount = amount;
     this.catagory = catagory;
 
-    this.emoji = function() {
-        return this.disposition === 'nice' ? "😇" :  "😈"
-    }
+
 
 
 }

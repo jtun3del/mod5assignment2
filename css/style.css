@@ -98,6 +98,9 @@ button:active {
 .hidden {
     display: none;
 }
+.checked {
+    background-color: green;
+}
 .list {
     font-size: 1.3em;
 }

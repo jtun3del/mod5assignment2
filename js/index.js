@@ -1,14 +1,14 @@
 $(function (){
     const itemren = new SantasList()
     let $nameField = $("#name")
-    let $behaviorFields = $("input[name='behavior']");
+    let $amountField = $("#amount");
     let $catagoryField = $("#catagory");
     $('#santa-list').on('submit', function(e){
         e.preventDefault();
 
         // get values
         let name = $nameField.val().trim();
-        let behavior = $("input[name='behavior']:checked").val();
+        let amount = $amountField.val();
         let catagory = $catagoryField.val();
 
 
@@ -18,11 +18,11 @@ $(function (){
 
         // validate values
         isValid = validateName($nameField) ? isValid : false;
-        isValid = validateBehavior($behaviorFields) ? isValid : false;
+        isValid = validateAmount($amountField) ? isValid : false;
         isValid = validateCatagory($catagoryField) ? isValid : false;
         if(isValid){
 
-            const item = new Item(name, behavior, catagory);
+            const item = new Item(name, amount, catagory);
             itemren.additem(item)
             itemren.outputList()
             console.log(itemren)
