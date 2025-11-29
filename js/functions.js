@@ -37,6 +37,15 @@ function validateBehavior($behaviorFields) {
     return true
 
 }
+function validateCatagory($CatagoryFields) {
+    let catagory = $CatagoryFields.val()
+     if(!["#Produce","#Grains","#Dairy","#Baking","#Meat","#Other"].includes(catagory)) {
+        addError($CatagoryFields.first(),"Hacking is banned");
+        return false;
+    }
+    return true
+
+}
 
 function clearErrors() {
     $(".error").remove();

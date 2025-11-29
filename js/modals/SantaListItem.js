@@ -1,16 +1,19 @@
 /**
  *
- * @param {Child} child
+ * @param {Item} item
  * @constructor
  */
-function SantaListItem(child) {
-    this.child = child
+function SantaListItem(item) {
+    this.item = item
     this.creatListItemElement = function() {
-        const $childDiv = $("<div class='child'>");
-        $childDiv.append($(`<div class="disposition">${this.child.emoji()}</div>`))
-        $childDiv.append($(`<div class="name">${this.child.name}</div>`))
-        $childDiv.append(`<button class="delete"> remove child</button>`)
-        return $childDiv;
+        let checkOffButton = $(`<button class="checked-off"> check off</button>`);
+        checkOffButton.on("change", function() {this.toggle(".checked-off");});
+        const $itemDiv = $("<div class='item'>");
+        $itemDiv.append(`<div class="disposition">${this.item.emoji()}</div>`)
+        $itemDiv.append(`<div class="name">${this.item.name}</div>`)
+        $itemDiv.append(checkOffButton);
+
+        return $itemDiv;
 
 
     }

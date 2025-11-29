@@ -1,25 +1,25 @@
 function SantasList() {
-    /** @var {Child[]} children */
-    this.children = [];
+    /** @var {Item[]} itemren */
+    this.itemren = [];
     /**
      *
-     * @param {Child} child
+     * @param {Item} item
      */
 
-    this.addChild = function(child) {
-        this.children.push(child);
-        this.children.forEach((child) =>{
+    this.additem = function(item) {
+        this.itemren.push(item);
+        this.itemren.forEach((item) =>{
 
         })
     }
-    this.removeChild = function(child) {
-        this.children.splice(this.children.indexOf(child), 1);
+    this.removeitem = function(item) {
+        this.itemren.splice(this.itemren.indexOf(item), 1);
     }
     this.outputList = function() {
-        $('.list').empty()
-        this.children.forEach(function(child) {
-            const santaListItem = new SantaListItem(child)
-            $('.list').append(santaListItem.creatListItemElement())
+        $('#list>div').empty()
+        this.itemren.forEach(function(item) {
+            const santaListItem = new SantaListItem(item)
+            $(item.catagory).append(santaListItem.creatListItemElement())
         })
 
     }

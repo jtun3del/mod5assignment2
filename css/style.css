@@ -95,7 +95,9 @@ button:hover {
 button:active {
     box-shadow: #666 0 0 3px;
 }
-
+.hidden {
+    display: none;
+}
 .list {
     font-size: 1.3em;
 }

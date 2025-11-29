@@ -1,13 +1,15 @@
 $(function (){
-    const children = new SantasList()
+    const itemren = new SantasList()
     let $nameField = $("#name")
     let $behaviorFields = $("input[name='behavior']");
+    let $catagoryField = $("#catagory");
     $('#santa-list').on('submit', function(e){
         e.preventDefault();
 
         // get values
         let name = $nameField.val().trim();
         let behavior = $("input[name='behavior']:checked").val();
+        let catagory = $catagoryField.val();
 
 
         // assume the form is valid
@@ -17,19 +19,20 @@ $(function (){
         // validate values
         isValid = validateName($nameField) ? isValid : false;
         isValid = validateBehavior($behaviorFields) ? isValid : false;
+        isValid = validateCatagory($catagoryField) ? isValid : false;
         if(isValid){
-            // child constructor
-            // create array of children
-            // create html child div
-            // add name and disposition
-            const child = new Child(name, behavior);
-            children.addChild(child)
-            children.outputList()
-            console.log(children)
+
+            const item = new Item(name, behavior, catagory);
+            itemren.additem(item)
+            itemren.outputList()
+            console.log(itemren)
 
         }
 
         
     });
+    $("#toggle-hide").on("change", function(){
+        $(".checked").toggle(".hidden");
+    })
 
 });
