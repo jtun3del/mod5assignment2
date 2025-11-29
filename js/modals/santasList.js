@@ -15,6 +15,7 @@ function SantasList() {
     this.removeitem = function(item) {
         this.itemren.splice(this.itemren.indexOf(item), 1);
     }
+
     this.outputList = function() {
         $('#list>div').empty()
         this.itemren.forEach(function(item) {
