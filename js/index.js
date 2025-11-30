@@ -34,5 +34,14 @@ $(function (){
     $("#toggle-hide").on("change", function(){
         $(".checked").toggle(".hidden");
     })
+    $("#filter-items").on("change", function(){
+        resetCatagories("#list>div");
+        let target = this.val()
+        let filteredList = itemren.filter(function(item){
+            return item.name === target || item.catagory === target;
+        })
+        filteredList.outputList()
+
+    })
 
 });

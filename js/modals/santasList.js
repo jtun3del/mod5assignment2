@@ -17,10 +17,10 @@ function SantasList() {
     }
 
     this.outputList = function() {
-        $('#list>div').empty()
+        resetCatagories("#list>div");
         this.itemren.forEach(function(item) {
             const santaListItem = new SantaListItem(item)
-            $(item.catagory).append(santaListItem.creatListItemElement())
+            $(item.catagory).show().append(santaListItem.creatListItemElement())
         })
 
     }

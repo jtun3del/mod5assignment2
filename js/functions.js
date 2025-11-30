@@ -51,3 +51,6 @@ function clearErrors() {
     $(".error").remove();
     $(".invalid").removeClass("invalid")
 }
+function resetCatagories(catagories) {
+    $(catagories).hide().empty()
+}
