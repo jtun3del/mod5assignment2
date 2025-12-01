@@ -25,6 +25,11 @@ function validateName($nameField) {
     return true
 }
 
+/**
+ * Validates amount field and returns true if valid
+ * @param $amountField
+ * @returns {boolean}
+ */
 function validateAmount($amountField) {
     let amount = $amountField.val()
     if(isNaN(amount)) {
@@ -37,6 +42,12 @@ function validateAmount($amountField) {
     return true
 
 }
+
+/**
+ * Will only return false if the user edits the html
+ * @param $CatagoryFields
+ * @returns {boolean}
+ */
 function validateCatagory($CatagoryFields) {
     let catagory = $CatagoryFields.val()
      if(!["#Produce","#Grains","#Dairy","#Baking","#Meat","#Other"].includes(catagory)) {
@@ -51,6 +62,30 @@ function clearErrors() {
     $(".error").remove();
     $(".invalid").removeClass("invalid")
 }
+
+/**
+ *
+ * @param catagories Gets the parent div of what it empties
+ */
 function resetCatagories(catagories) {
-    $(catagories).hide().empty()
+    $(catagories).hide()
+    $(catagories + ">div").empty()
+
+}
+
+/**
+ *
+ * @param FilteredList plain list object
+ * @param GroceryList empty grocery list item
+ */
+function convertList(FilteredList, GroceryList) {
+    FilteredList.forEach(function(item) {
+        GroceryList.additem(item)
+    })
+
+}
+
+
+function HideClass(Class) {
+    $(Class).toggle()
 }

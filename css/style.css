@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
 
 body {
-    background-color: red;
+    --primary-color: #FFCDC9;
+    --secondary-color: #FD7979;
+    --trinary-color: white;
+
+    background-color: var(--primary-color);
 /*     background-image: linear-gradient(45deg, white 25%, transparent 25.5%, transparent 50%, white 50.5%, white 75%, transparent 75.5%, transparent); */
     background-size: 20px 20px;
     font-family: Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Mountains of Christmas', serif;
+    font-family:  serif;
     margin: 0;
 }
 
@@ -50,7 +54,7 @@ label::after{
 }
 
 input:required+label:after{
-    color: red;
+    color: var(--secondary-color);
     content: '*'
 }
 
@@ -62,17 +66,17 @@ form>div {
 }
 
 form .error{
-    color: red;
+    color: var(--secondary-color);
     display: block;
 }
 
 form .invalid {
-    border: 2px solid red;
+    border: 2px solid var(--secondary-color);
 }
 
 button {
     background-color: deepskyblue;
-    color: white;
+    color: var(--trinary-color);
     padding: 10px;
     width: 100%;
     font-size: 1.5em;
@@ -99,9 +103,7 @@ button:active {
 .hidden {
     display: none;
 }
-.checked {
-    background-color: green;
-}
+
 .list {
     font-size: 1.3em;
 }
@@ -119,7 +121,7 @@ button:active {
 }
 
 .white-box {
-    background-color: rgba(255,255,255,.9);
+    background-color: var(--trinary-color);
     padding: 50px;
     border-radius: 7px;
 }
@@ -159,4 +161,19 @@ button.delete {
     left: -17px;
     height: 44px;
     filter: drop-shadow(0 2px 1px rgb(0 0 0 / .25));
+}
+.checked {
+    text-decoration: line-through;
+
+}
+.checked-off {
+    background-color: orangered;
+    padding: 2px;
+    font-size: 1em;
+
+}
+.item {
+    background-color: var(--trinary-color);
+    padding: 20px;
+    border-radius: 7px;
 }
