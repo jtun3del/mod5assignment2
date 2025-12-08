@@ -3,6 +3,8 @@
 body {
     --primary-color: #FFCDC9;
     --secondary-color: #FD7979;
+    --color-accent: #ffffff;
+    --color-light: gray;
     --trinary-color: white;
 
     background-color: var(--primary-color);
@@ -61,7 +63,7 @@ input:required+label:after{
 form>div {
     display: flex;
     /*justify-content: space-between;*/
-    flex-flow: column;
+    flex-flow: row;
     margin-bottom: 20px;
 }
 
@@ -176,4 +178,60 @@ button.delete {
     background-color: var(--trinary-color);
     padding: 20px;
     border-radius: 7px;
+}
+p {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+}
+
+#gym-members {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#gym-members tr:first-of-type th {
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+#gym-members tr:not(:first-of-type):nth-of-type(2n) {
+    background-color: rgba(255,255,255,.5);
+}
+
+#gym-members tr:not(:first-of-type):nth-of-type(2n + 1) {
+    background-color: rgba(255,255,255,.25);
+}
+
+#gym-members tr:not(:first-of-type):hover {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+}
+
+#gym-members td {
+    padding: 7.5px 15px;
+}
+
+#gym-members td.center {
+    text-align: center;
+}
+
+#gym-members td:not(:last-of-type) {
+    border-right: 1px solid rgba(255,255,255,1)
+}
+
+#gym-members i.clickable {
+    cursor: pointer;
+}
+
+#gym-members i.clickable:hover {
+    color: lightgray;
+}
+#gym-add-member {
+    background-color: white;
+    padding: 5px
+}
+#gym-add-member:hover {
+    background-color: gray;
 }

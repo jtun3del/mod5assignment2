@@ -2,40 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Santa's List</title>
+    <title>Gym Application</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/functions.js"></script>
+
 </head>
 <body>
     <div class="page">
-        <form id="santa-list" class="white-box">
 
-            
-            <h1>Grocery List</h1>
+        <h1 id="gym-header">Gym Member List</h1>
+        <div><h2 id="gym-add-member"> Add Gym Member</h2></div>
+        <form id="gym-list" class="white-box">
+
+
             <div>
-                <label for="name">Item Name</label>
-                <input type="text" id="name" required placeholder="Lettuce">
+                <label for="member-id">Member ID </label>
+                <input type="number" id="member-id" required>
 
+            </div>
+            <div>
+            <label for="username">User Name </label>
+            <input type="text" id="username" required>
             </div>
 
             <div>
-            <label for="amount">Amount of Items</label>
-            <input type="number" id="amount" required placeholder="2?">
+                <label for="fname">First Name </label>
+                <input type="text" id="fname" required >
             </div>
 
             <div>
-            <label for="catagory">Choose a catagory:</label>
-
-
-            <select name="catagory" id="catagory">
-                <option value="#Produce">Produce</option>
-                <option value="#Dairy">Dairy</option>
-                <option value="#Baking">Baking</option>
-                <option value="#Grains">Grains</option>
-                <option value="#Meat">Meat</option>
-                <option value="#Other">Other</option>
-            </select>
+                <label for="lname">Last Name </label>
+                <input type="text" id="lname" required>
             </div>
+
+            <div>
+                <label for="enrollment-date">Enrollment Date </label>
+                <input type="date" id="enrollment-date" required >
+            </div>
+
+            <div>
+                <label for="cancellation-date">Cancellation Date </label>
+                <input type="date" id="cancellation-date" required >
+            </div>
+
+            <p>
+            <label for="pool-access">Pool Access</label>
+            <input type="checkbox" id="pool-access">
+            </p>
+            <p>
+            <label for="spa-access">Spa Access</label>
+            <input type="checkbox" id="spa-access">
+            </p>
+
 
             <button type="submit">Add to List</button>
         </form>
@@ -48,12 +66,7 @@
             <label for="filter-items">Search for items</label>
             <input type="text" id="filter-items" >
 
-            <div><label>Produce</label><div id="Produce"></div></div>
-            <div><label>Dairy</label><div id="Dairy"> </div></div>
-            <div><label>Baking</label><div id="Baking"></div></div>
-            <div><label>Grains</label><div id="Grains"></div></div>
-            <div><label>Meat</label><div id="Meat"></div></div>
-            <div><label>Other</label><div id="Other"></div></div>
+            <table id="gym-members"></table>
 
 
 
@@ -61,9 +74,10 @@
 
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/modals/Item.js"></script>
-    <script src="js/modals/groceryList.js"></script>
-    <script src="js/modals/GroceryListItem.js"></script>
+    <script src="js/modals/GymMember.js"></script>
+    <script src="js/modals/gymList.js"></script>
+    <script src="js/modals/GymListMember.js"></script>
+    <script src="js/modals/list.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
